@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aryan Aryal - Cybersecurity Specialist</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<style>
+/* Luxury Contact Box */
+.contact-card.luxury-box {
+    background: rgba(36, 36, 36, 0.7); /* Semi-transparent dark background */
+    backdrop-filter: blur(12px); /* Glassmorphism effect */
+    border: 1px solid rgba(212, 175, 55, 0.3); /* Subtle gold border */
+    border-radius: var(--border-radius);
+    padding: 2.5rem;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4), inset 0 0 10px rgba(212, 175, 55, 0.1);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-card.luxury-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(212, 175, 55, 0.2), transparent);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+
+.contact-card.luxury-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+}
+
+.contact-card.luxury-box:hover::before {
+    opacity: 1;
+}
+
+.contact-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.contact-item {
+    background: rgba(212, 175, 55, 0.1); /* Subtle gold background */
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    transition: var(--transition);
+    min-width: 220px;
+    flex: 0 1 auto;
+}
+
+.contact-item:hover {
+    background: rgba(212, 175, 55, 0.2);
+    color: var(--secondary-color);
+    transform: scale(1.05);
+}
+
+.contact-icon {
+    font-size: 1.8rem; /* Same size as GitHub icon */
+    color: var(--accent-color);
+    transition: var(--transition);
+}
+
+.contact-item:hover .contact-icon {
+    color: var(--secondary-color);
+    transform: scale(1.3); /* Same hover effect as GitHub icon */
+}
+
+.contact-item a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contact-item a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+.contact-item span {
+    font-weight: 500;
+}
+
+/* Responsive Adjustments for Contact Box */
+@media (max-width: 768px) {
+    .contact-card.luxury-box {
+        padding: 2rem;
+    }
+    .contact-items {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    .contact-item {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-card.luxury-box {
+        padding: 1.5rem;
+    }
+    .contact-item {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
+    .contact-icon {
+        font-size: 1.6rem;
+    }
+}
+
+/* Print Styles for Contact Box */
+@media print {
+    .contact-card.luxury-box {
+        background: none;
+        backdrop-filter: none;
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+    .contact-card.luxury-box::before {
+        display: none;
+    }
+    .contact-item {
+        background: none;
+        padding: 0.5rem;
+        transform: none;
+    }
+    .contact-item, .contact-item a {
+        color: #000;
+    }
+    .contact-icon {
+        color: #666;
+    }
+}
+
+
+</style>
+
+</head>
+<body>
+ <header>
+        <div class="container">
+            <h1>Aryan Aryal</h1>
+            <p class="subtitle">Cybersecurity Specialist</p>
+        </div>
+    </header>
+
+    <nav id="navbar">
+        <div class="container">
+            <button class="hamburger" aria-label="Toggle Navigation">
+                
+            </button>
+            <ul>
+                <li><a href="#introduction"><i class="fas fa-user"></i> Introduction</a></li>
+                <li><a href="#education"><i class="fas fa-graduation-cap"></i> Education</a></li>
+                <li><a href="#experience"><i class="fas fa-briefcase"></i> Experience</a></li>
+                <li><a href="#skills"><i class="fas fa-tools"></i> Skills</a></li>
+                <li><a href="#highlights"><i class="fas fa-star"></i> Highlights</a></li>
+            </ul>
+            <button id="download-pdf" class="btn" onclick="window.open('assets/cv/aryanaryal_resume.pdf', '_blank')">
+                <i class="fas fa-download"></i> Download CV
+            </button>
+        </div>
+    </nav>
+
+    <main class="container">
+        
+        <section id="contact-info">
+            <h2>Contact Information</h2>
+            <div class="contact-card luxury-box">
+                <div class="contact-items">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt contact-icon"></i>
+                        <span>Kathmandu, Nepal</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope contact-icon"></i>
+                        <a href="mailto:arisksec@mail.com">arisksec@mail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-globe contact-icon"></i>
+                        <a href="https://www.aryanaryal.com.np" target="_blank">aryanaryal.com.np</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin contact-icon"></i>
+                        <a href="https://www.linkedin.com/in/aryan-aryal-arisksec" target="_blank">aryan-aryal-arisksec</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-github contact-icon"></i>
+                        <a href="https://github.com/arisksec" target="_blank">arisksec</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="introduction">
+            <h2>Introduction</h2>
+            <div class="content-box">
+                <p>I am Aryan Aryal, a strategically minded Cybersecurity Specialist with 4+ years' experience in ethical hacking, vulnerability assessment, and bug bounty programmes. Skilled in exploit development, secure coding, and identifying critical security flaws in enterprise systems. Proven track record of reporting impactful vulnerabilities to global organisations. Adept in penetration testing and threat modelling. Holds foundational experience as a Commercial Contracts Administrator, contributing to contractual reviews. Offers a balanced perspective of technical rigour and operational compliance within professional environments.</p>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <div class="content-box">
+                <div class="education-item">
+                    <h3>BIT, Tribhuvan University</h3>
+                    <p class="degree">Bachelors in Information Technology</p>
+                    <p class="date">Dec 2016 – Aug 2021</p>
+                    <div class="coursework">
+                        <h4>Coursework:</h4>
+                        <ul>
+                            <li>AI</li>
+                            <li>JAVA</li>
+                            <li>C/C++</li>
+                            <li>Python</li>
+                            <li>Compiler and Design Constructions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Experience</h2>
+            <div class="content-box">
+                <div class="experience-item">
+                    <h3>Synack, Inc.</h3>
+                    <p class="position">Red Team</p>
+                    <p class="date">February 2025 - Present</p>
+                    <ul>
+                        <li>Performed authorised security assessments on client assets</li>
+                        <li>Identified and exploited vulnerabilities</li>
+                        <li>Delivered detailed reports</li>
+                        <li>Collaborated with Synack's global Red Team to strengthen enterprise-level security postures</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Freelance (Self employed)</h3>
+                    <p class="position">Backend Developer</p>
+                    <p class="date">October 2020 - Present</p>
+                    <ul>
+                        <li>Conducted in-depth security research</li>
+                        <li>Identified vulnerabilities in web applications</li>
+                        <li>Reported bugs through bounty programmes</li>
+                        <li>Collaborated with global teams to enhance application security standards</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>National CyberWatch Center</h3>
+                    <p class="position">CSDW Member</p>
+                    <p class="date">August 2024 - Present</p>
+                    <ul>
+                        <li>Contributed to cybersecurity skill development initiatives</li>
+                        <li>Collaborated on research</li>
+                        <li>Promoted best practices within the National CyberWatch Center community</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Core Competences</h2>
+            <div class="content-box">
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Bug Bounty & Ethical Hacking</h3>
+                        <p>Proficient in uncovering high-impact vulnerabilities (e.g., RCE, SSRF, SQLi) across web applications and networks.</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Penetration Testing</h3>
+                        <p>Hands-on experience with Burp Suite, Metasploit, Nmap etc. and OWASP methodologies.</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Commercial Contracts & Compliance</h3>
+                        <p>Knowledgeable in contract drafting, risk assessment, and SLA enforcement, ensuring security clauses align with business needs.</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Regulatory Frameworks</h3>
+                        <p>Familiarity with GDPR, ISO 27001, PCI-DSS, and integrating security into contractual agreements.</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Stakeholder Engagement</h3>
+                        <p>Effective at liaising between technical teams and legal/business units to mitigate risks.</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Contract Management Tools</h3>
+                        <p>Proficient in DocuSign, ContractWorks, and PandaDoc for contract drafting and compliance.</p>
+                    </div>
+                </div>
+
+                <div class="technologies">
+                    <h3>Technologies</h3>
+                    <div class="tech-list">
+                        <div>
+                            <h4>Languages:</h4>
+                            <ul class="tech-items">
+                                <li>C++</li>
+                                <li>C</li>
+                                <li>Ruby</li>
+                                <li>Java</li>
+                                <li>Python</li>
+                                <li>C#</li>
+                                <li>SQL</li>
+                                <li>JavaScript</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4>Technologies:</h4>
+                            <ul class="tech-items">
+                                <li>.NET</li>
+                                <li>Django</li>
+                                <li>MySQL</li>
+                                <li>SQL Server</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="highlights">
+            <h2>Career Highlights</h2>
+            <div class="content-box">
+                <ul class="highlight-list">
+                    <li>Successfully identified <strong>20+ critical vulnerabilities</strong> for multinational corporations, earning substantial rewards through platforms such as HackerOne and Bugcrowd.</li>
+                    <li>Reviewed and advised on <strong>commercial contracts</strong>, ensuring robust security provisions and compliance with data protection laws.</li>
+                    <li>Delivered <strong>clear, actionable reports</strong> to executive stakeholders, bridging the gap between technical findings and business impact.</li>
+                </ul>
+                <div class="value-proposition">
+                    <p><strong>Value Proposition:</strong> A rare blend of offensive security skills and contractual insight, enabling organisations to fortify defences while maintaining legal and commercial integrity.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="certifications">
+            <h2>Certifications</h2>
+            <div class="content-box">
+                <ul class="highlight-list">
+                    <li>OSCP - Offensive Security Certified Professional</li>
+                    <li>CEH - Certified Ethical Hacker</li>
+                    <li>CISSP - Certified Information Systems Security Professional</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© <span id="current-year">2025</span> Aryan Aryal. All rights reserved.</p>
+            <div class="social-links">
+                <a href="/cdn-cgi/l/email-protection#2c4d5e455f475f494f6c414d4540024f4341"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/aryan-aryal-arisksec" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/arisksec" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.aryanaryal.com.np" target="_blank"><i class="fas fa-globe"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.aryanaryal.com.np/626c6f672d617279616e/6d61696e/6a73/16234.js"></script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="assets/scritpt.js"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'930d4e908897c6af',t:'MTc0NDczOTY1My4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
