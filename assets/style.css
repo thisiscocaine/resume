@@ -1,3 +1,11 @@
+oh All perfectly good  
+Create a fully responsive web design using CSS media queries that ensures the website looks perfect on all types of mobile phones and screen sizes. Include all essential media queries for modern mobile devices and test for responsiveness.
+
+
+Deeply Analize and written CSS code only
+
+- Not be change original Design 
+
 :root {
     --primary-color: #1a1a1a;
     --secondary-color: #ffd700;
@@ -8,39 +16,37 @@
     --text-light: #b0b0b0;
     --background-color: #0a0a0a;
     --content-bg: #1c1c1c;
-    --shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-    --border-radius: 6px;
-    --transition: all 0.25s ease;
+    --shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    --border-radius: 12px;
+    --transition: all 0.4s ease-in-out;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow-wrap: break-word;
 }
 
 body {
     font-family: 'Montserrat', sans-serif;
-    line-height: 1.4;
+    line-height: 1.8;
     color: var(--text-color);
     background: linear-gradient(135deg, var(--background-color), #1c2526);
     overflow-x: hidden;
-    font-size: clamp(11px, 1.6vw, 13px);
 }
 
 .container {
     width: 100%;
-    max-width: 1400px;
+    max-width: 1300px;
     margin: 0 auto;
-    padding: 0 clamp(6px, 1.2vw, 12px);
+    padding: 0 30px;
 }
 
 /* Header */
 header {
     background: var(--dark-color);
     color: var(--light-color);
-    padding: clamp(0.8rem, 2.5vw, 1.8rem) 0;
+    padding: 3rem 0;
     text-align: center;
     box-shadow: var(--shadow);
     position: relative;
@@ -48,9 +54,9 @@ header {
 }
 
 header h1 {
-    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    font-size: 3.5rem;
     font-weight: 700;
-    letter-spacing: 0.8px;
+    letter-spacing: 2px;
     text-transform: uppercase;
     background: linear-gradient(to right, var(--secondary-color), var(--light-color));
     -webkit-background-clip: text;
@@ -59,15 +65,16 @@ header h1 {
 }
 
 .subtitle {
-    font-size: clamp(0.8rem, 1.6vw, 0.9rem);
+    font-size: 1.4rem;
     color: var(--text-light);
     font-weight: 300;
-    letter-spacing: 0.6px;
+    letter-spacing: 1px;
 }
 
 /* Navigation */
 nav {
     background: rgba(18, 18, 18, 0.95);
+    backdrop-filter: blur(10px);
     position: fixed;
     top: 0;
     width: 100%;
@@ -79,7 +86,7 @@ nav .container {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: clamp(0.4rem, 1vw, 0.6rem) clamp(6px, 1.2vw, 12px);
+    padding: 1rem 30px;
 }
 
 nav ul {
@@ -89,25 +96,25 @@ nav ul {
 }
 
 nav li {
-    margin: 0 clamp(0.5rem, 1vw, 0.8rem);
+    margin: 0 1.5rem;
 }
 
 nav a {
     color: var(--light-color);
     text-decoration: none;
     font-weight: 500;
-    font-size: clamp(0.75rem, 1.2vw, 0.85rem);
+    font-size: 1.1rem;
     display: flex;
     align-items: center;
-    gap: 0.25rem;
-    padding: 0.25rem 0.5rem;
-    border-radius: 3px;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
     transition: var(--transition);
 }
 
 nav a:hover, nav a.active {
     color: var(--secondary-color);
-    background: rgba(255, 215, 0, 0.15);
+    background: rgba(255, 215, 0, 0.1);
 }
 
 .hamburger {
@@ -115,21 +122,21 @@ nav a:hover, nav a.active {
     background: none;
     border: none;
     cursor: pointer;
-    padding: 0.25rem;
+    padding: 0.5rem;
     z-index: 1001;
 }
 
 .hamburger span {
     display: block;
-    width: 18px;
-    height: 1.5px;
+    width: 30px;
+    height: 3px;
     background: var(--light-color);
-    margin: 3px 0;
+    margin: 6px 0;
     transition: var(--transition);
 }
 
 .hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(4px, 4px);
+    transform: rotate(45deg) translate(8px, 8px);
 }
 
 .hamburger.active span:nth-child(2) {
@@ -137,7 +144,7 @@ nav a:hover, nav a.active {
 }
 
 .hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(4px, -4px);
+    transform: rotate(-45deg) translate(8px, -8px);
 }
 
 /* Buttons */
@@ -145,37 +152,37 @@ nav a:hover, nav a.active {
     background: linear-gradient(45deg, var(--secondary-color), #ffaa00);
     color: var(--dark-color);
     border: none;
-    padding: clamp(0.35rem, 0.8vw, 0.5rem) clamp(0.7rem, 1.8vw, 1rem);
-    border-radius: 40px;
+    padding: 0.8rem 1.8rem;
+    border-radius: 50px;
     cursor: pointer;
     font-weight: 600;
-    font-size: clamp(0.65rem, 1.2vw, 0.75rem);
+    font-size: 1rem;
     display: inline-flex;
     align-items: center;
-    gap: 0.3rem;
+    gap: 0.6rem;
     transition: var(--transition);
-    box-shadow: 0 2px 6px rgba(255, 215, 0, 0.2);
-    min-height: 40px;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
 }
 
 .btn:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.6);
     background: linear-gradient(45deg, #ffaa00, var(--secondary-color));
 }
 
-/* Content Box Styles */
+/* Content Box Styles (used across multiple sections) */
 .content-box {
-    background: rgba(36, 36, 36, 0.85);
-    border: 1px solid rgba(212, 175, 55, 0.15);
+    background: rgba(36, 36, 36, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(212, 175, 55, 0.3);
     border-radius: var(--border-radius);
-    padding: clamp(0.8rem, 2vw, 1.2rem);
+    padding: 2.5rem;
     box-shadow: var(--shadow);
     transition: var(--transition);
     position: relative;
     overflow: hidden;
+    max-width: 800px;
     width: 100%;
-    max-width: 100%;
     margin: 0 auto;
 }
 
@@ -186,15 +193,15 @@ nav a:hover, nav a.active {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+    background: linear-gradient(45deg, transparent, rgba(212, 175, 55, 0.2), transparent);
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.5s ease;
     pointer-events: none;
 }
 
 .content-box:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    transform: translateY(-8px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
 }
 
 .content-box:hover::before {
@@ -204,39 +211,39 @@ nav a:hover, nav a.active {
 /* Section headings */
 section h2 {
     color: var(--secondary-color);
-    font-size: clamp(1.4rem, 2.8vw, 1.8rem);
-    margin-bottom: clamp(0.7rem, 1.8vw, 1rem);
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
     position: relative;
     font-weight: 600;
     text-align: center;
-    letter-spacing: 0.8px;
+    letter-spacing: 2px;
     text-transform: uppercase;
 }
 
 section h2::after {
     content: '';
     position: absolute;
-    bottom: -5px;
+    bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
-    width: clamp(35px, 6vw, 50px);
-    height: 1.5px;
+    width: 80px;
+    height: 4px;
     background: linear-gradient(to right, var(--secondary-color), transparent);
 }
 
 /* General section styles */
 main {
-    padding: clamp(0.8rem, 2.5vw, 1.8rem) 0;
+    padding: 3rem 0;
 }
 
 section {
-    margin-bottom: clamp(1.2rem, 3.5vw, 2rem);
+    margin-bottom: 4rem;
     opacity: 0;
-    transform: translateY(10px);
-    animation: fadeInUp 0.4s ease forwards;
+    transform: translateY(30px);
+    animation: fadeInUp 0.8s ease forwards;
     background: linear-gradient(135deg, #1a1a1a 0%, #2c2c2c 100%);
-    padding: clamp(15px, 4vw, 30px) clamp(6px, 1.2vw, 10px);
-    min-height: auto;
+    padding: 60px 20px;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -252,10 +259,11 @@ section {
 
 /* Contact Card */
 .contact-card.luxury-box {
-    background: rgba(36, 36, 36, 0.85);
-    border: 1px solid rgba(212, 175, 55, 0.15);
+    background: rgba(36, 36, 36, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(212, 175, 55, 0.3);
     border-radius: var(--border-radius);
-    padding: clamp(0.8rem, 2vw, 1.2rem);
+    padding: 2.5rem;
     box-shadow: var(--shadow);
     position: relative;
     overflow: hidden;
@@ -264,42 +272,40 @@ section {
 .contact-items {
     display: flex;
     flex-wrap: wrap;
-    gap: clamp(0.5rem, 1vw, 0.7rem);
+    gap: 1.5rem;
     justify-content: center;
 }
 
 .contact-item {
     background: rgba(212, 175, 55, 0.1);
-    padding: clamp(0.3rem, 0.6vw, 0.4rem) clamp(0.5rem, 1.2vw, 0.8rem);
-    border-radius: 3px;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: clamp(0.4rem, 0.6vw, 0.5rem);
-    font-size: clamp(0.7rem, 1.1vw, 0.8rem);
+    gap: 1.2rem;
+    font-size: 1.1rem;
     color: var(--text-color);
     transition: var(--transition);
-    width: 100%;
-    max-width: 100%;
-    flex: 1 1 auto;
-    min-height: 40px;
+    min-width: 220px;
+    flex: 0 1 auto;
 }
 
 .contact-item:hover {
     background: rgba(212, 175, 55, 0.2);
     color: var(--secondary-color);
-    transform: scale(1.01);
+    transform: scale(1.05);
 }
 
 .contact-icon {
-    font-size: clamp(1.1rem, 1.8vw, 1.3rem);
+    font-size: 1.8rem;
     color: var(--accent-color);
     transition: var(--transition);
 }
 
 .contact-item:hover .contact-icon {
     color: var(--secondary-color);
-    transform: scale(1.05);
+    transform: scale(1.3);
 }
 
 .contact-item a {
@@ -317,37 +323,36 @@ section {
 .tech-list {
     display: flex;
     flex-wrap: wrap;
-    gap: clamp(0.5rem, 1vw, 0.7rem);
-    justify-content: center;
+    gap: 1.5rem;
+    justify-content: space-between;
 }
 
 .tech-list > div {
     flex: 1;
-    width: 100%;
-    max-width: 100%;
+    min-width: 220px;
 }
 
 .tech-list h4 {
-    font-size: clamp(0.9rem, 1.6vw, 1.1rem);
+    font-size: 1.5rem;
     font-weight: 500;
     color: var(--text-color);
-    margin-bottom: clamp(0.4rem, 0.6vw, 0.5rem);
-    border-bottom: 1px solid var(--accent-color);
-    padding-bottom: 3px;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 8px;
 }
 
 .tech-items {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: clamp(0.3rem, 0.6vw, 0.4rem);
+    gap: 0.75rem;
 }
 
 .tech-items li {
     background: rgba(212, 175, 55, 0.1);
-    padding: clamp(0.3rem, 0.6vw, 0.4rem) clamp(0.5rem, 1.2vw, 0.8rem);
-    border-radius: 3px;
-    font-size: clamp(0.7rem, 1.1vw, 0.8rem);
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
     font-family: 'Roboto', sans-serif;
     color: var(--text-color);
     transition: var(--transition);
@@ -359,61 +364,61 @@ section {
 .tech-items li::before {
     content: '◆';
     color: var(--accent-color);
-    font-size: 0.5rem;
-    margin-right: 0.5rem;
+    font-size: 0.8rem;
+    margin-right: 1rem;
     transition: var(--transition);
 }
 
 .tech-items li:hover {
     background: rgba(212, 175, 55, 0.2);
     color: var(--secondary-color);
-    transform: scale(1.01);
+    transform: scale(1.05);
 }
 
 .tech-items li:hover::before {
     color: var(--secondary-color);
-    transform: scale(1.05);
+    transform: scale(1.3);
 }
 
 /* Experience Section */
 .experience-item {
     position: relative;
-    padding: clamp(0.5rem, 1.2vw, 0.8rem);
+    padding: 1.5rem;
     background: rgba(212, 175, 55, 0.05);
-    border-radius: 3px;
-    margin-bottom: clamp(0.5rem, 1.2vw, 0.8rem);
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
     transition: var(--transition);
 }
 
 .experience-item:not(:last-child)::after {
     content: '';
     position: absolute;
-    left: 0.5rem;
-    bottom: clamp(-0.5rem, -1.2vw, -0.8rem);
-    width: 1px;
-    height: clamp(0.5rem, 1.2vw, 0.8rem);
-    background: linear-gradient(to bottom, rgba(212, 175, 55, 0.3), transparent);
+    left: 1rem;
+    bottom: -1.5rem;
+    width: 2px;
+    height: 1.5rem;
+    background: linear-gradient(to bottom, rgba(212, 175, 55, 0.5), transparent);
 }
 
 .experience-item:hover {
-    background: rgba(212, 175, 55, 0.15);
-    transform: scale(1.005);
+    background: rgba(212, 175, 55, 0.1);
+    transform: scale(1.02);
 }
 
 .experience-item h3 {
-    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    font-size: 1.8rem;
     font-weight: 700;
     color: var(--accent-color);
-    margin-bottom: 0.25rem;
-    letter-spacing: 0.6px;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
 }
 
 .experience-item .position,
 .experience-item .date {
     font-family: 'Roboto', sans-serif;
-    font-size: clamp(0.7rem, 1.1vw, 0.8rem);
+    font-size: 1.1rem;
     color: var(--text-color);
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.5rem;
     font-weight: 400;
 }
 
@@ -424,16 +429,16 @@ section {
 
 .experience-item ul {
     list-style: none;
-    margin-top: 0.5rem;
+    margin-top: 1rem;
     font-family: 'Roboto', sans-serif;
 }
 
 .experience-item li {
-    font-size: clamp(0.65rem, 1vw, 0.75rem);
+    font-size: 1rem;
     color: var(--text-color);
-    padding: 0.25rem 0;
+    padding: 0.5rem 0;
     position: relative;
-    padding-left: 1rem;
+    padding-left: 2rem;
     transition: var(--transition);
 }
 
@@ -444,56 +449,56 @@ section {
     top: 50%;
     transform: translateY(-50%);
     color: var(--accent-color);
-    font-size: 0.5rem;
+    font-size: 0.8rem;
     transition: var(--transition);
 }
 
 .experience-item li:hover {
     color: var(--secondary-color);
-    transform: translateX(2px);
+    transform: translateX(5px);
 }
 
 .experience-item li:hover::before {
     color: var(--secondary-color);
-    transform: translateY(-50%) scale(1.05);
+    transform: translateY(-50%) scale(1.3);
 }
 
 /* Skills Section */
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(clamp(160px, 35%, 200px), 1fr));
-    gap: clamp(0.5rem, 1.2vw, 0.8rem);
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
     position: relative;
 }
 
 .skill-category {
     background: rgba(212, 175, 55, 0.05);
-    border-radius: 3px;
-    padding: clamp(0.5rem, 1.2vw, 0.8rem);
+    border-radius: 8px;
+    padding: 1.5rem;
     transition: var(--transition);
     position: relative;
 }
 
 .skill-category:hover {
-    background: rgba(212, 175, 55, 0.15);
-    transform: scale(1.005);
+    background: rgba(212, 175, 55, 0.1);
+    transform: scale(1.02);
 }
 
 .skill-category h3 {
-    font-size: clamp(1.1rem, 2vw, 1.3rem);
+    font-size: 1.8rem;
     font-weight: 700;
     color: var(--accent-color);
-    margin-bottom: 0.25rem;
-    letter-spacing: 0.6px;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
 }
 
 .skill-category p {
     font-family: 'Roboto', sans-serif;
-    font-size: clamp(0.65rem, 1vw, 0.75rem);
+    font-size: 1rem;
     color: var(--text-color);
-    line-height: 1.3;
+    line-height: 1.6;
     position: relative;
-    padding-left: 1rem;
+    padding-left: 2rem;
 }
 
 .skill-category p::before {
@@ -503,43 +508,43 @@ section {
     top: 50%;
     transform: translateY(-50%);
     color: var(--accent-color);
-    font-size: 0.5rem;
+    font-size: 0.8rem;
     transition: var(--transition);
 }
 
 .skill-category p:hover {
     color: var(--secondary-color);
-    transform: translateX(2px);
+    transform: translateX(5px);
 }
 
 .skill-category p:hover::before {
     color: var(--secondary-color);
-    transform: translateY(-50%) scale(1.05);
+    transform: translateY(-50%) scale(1.3);
 }
 
 /* Highlights Section */
 .highlight-list {
     list-style: none;
     position: relative;
-    padding-left: clamp(1rem, 2vw, 1.2rem);
+    padding-left: 2.5rem;
 }
 
 .highlight-list::before {
     content: '';
     position: absolute;
-    left: 0.5rem;
+    left: 1rem;
     top: 0;
-    width: 1px;
+    width: 2px;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(212, 175, 55, 0.3), transparent);
+    background: linear-gradient(to bottom, rgba(212, 175, 55, 0.5), transparent);
 }
 
 .highlight-list li {
     background: rgba(212, 175, 55, 0.05);
-    border-radius: 3px;
-    padding: clamp(0.4rem, 1vw, 0.5rem) clamp(0.5rem, 1.2vw, 0.8rem);
-    margin-bottom: clamp(0.5rem, 1.2vw, 0.8rem);
-    font-size: clamp(0.7rem, 1.1vw, 0.8rem);
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
     font-family: 'Roboto', sans-serif;
     color: var(--text-color);
     position: relative;
@@ -549,23 +554,23 @@ section {
 .highlight-list li::before {
     content: '◆';
     position: absolute;
-    left: clamp(-1rem, -2vw, -1.2rem);
+    left: -2rem;
     top: 50%;
     transform: translateY(-50%);
     color: var(--accent-color);
-    font-size: 0.5rem;
+    font-size: 0.8rem;
     transition: var(--transition);
 }
 
 .highlight-list li:hover {
-    background: rgba(212, 175, 55, 0.15);
-    transform: scale(1.005);
+    background: rgba(212, 175, 55, 0.1);
+    transform: scale(1.02);
     color: var(--secondary-color);
 }
 
 .highlight-list li:hover::before {
     color: var(--secondary-color);
-    transform: translateY(-50%) scale(1.05);
+    transform: translateY(-50%) scale(1.3);
 }
 
 .highlight-list li strong {
@@ -575,18 +580,18 @@ section {
 
 .value-proposition {
     background: rgba(212, 175, 55, 0.05);
-    border-radius: 3px;
-    padding: clamp(0.5rem, 1.2vw, 0.8rem);
-    margin-top: clamp(0.5rem, 1.2vw, 0.8rem);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-top: 1.5rem;
     font-family: 'Roboto', sans-serif;
-    font-size: clamp(0.7rem, 1.1vw, 0.8rem);
+    font-size: 1.1rem;
     color: var(--text-color);
     transition: var(--transition);
 }
 
 .value-proposition:hover {
-    background: rgba(212, 175, 55, 0.15);
-    transform: scale(1.005);
+    background: rgba(212, 175, 55, 0.1);
+    transform: scale(1.02);
 }
 
 .value-proposition strong {
@@ -597,24 +602,24 @@ section {
 /* Introduction & Education Sections */
 .content-box p {
     font-family: 'Roboto', sans-serif;
-    font-size: clamp(0.7rem, 1.1vw, 0.8rem);
+    font-size: 1.1rem;
     color: var(--text-color);
-    line-height: 1.3;
-    margin-bottom: 0.5rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
     transition: var(--transition);
 }
 
 .content-box p:hover {
     color: var(--secondary-color);
-    transform: translateX(2px);
+    transform: translateX(5px);
 }
 
 .education-item .degree,
 .education-item .date {
     font-family: 'Roboto', sans-serif;
-    font-size: clamp(0.7rem, 1.1vw, 0.8rem);
+    font-size: 1.1rem;
     color: var(--text-color);
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.5rem;
     font-weight: 400;
 }
 
@@ -624,17 +629,17 @@ section {
 }
 
 .education-item .coursework h4 {
-    font-size: clamp(0.8rem, 1.6vw, 0.9rem);
+    font-size: 1.4rem;
     font-weight: 500;
     color: var(--text-color);
-    margin-bottom: clamp(0.3rem, 0.6vw, 0.4rem);
-    border-bottom: 1px solid var(--accent-color);
-    padding-bottom: 0.25rem;
+    margin-bottom: 0.75rem;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 0.5rem;
 }
 
 .education-item ul {
     list-style: none;
-    margin-top: 0.25rem;
+    margin-top: 0.5rem;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -642,168 +647,56 @@ section {
 footer {
     background: var(--dark-color);
     color: var(--light-color);
-    padding: clamp(0.7rem, 1.8vw, 1rem) 0;
+    padding: 2rem 0;
     text-align: center;
-    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.5);
 }
 
 .social-links {
     display: flex;
     justify-content: center;
-    gap: clamp(0.7rem, 1.2vw, 1rem);
-    margin-top: clamp(0.5rem, 1.2vw, 0.8rem);
+    gap: 2rem;
+    margin-top: 1.5rem;
 }
 
 .social-links a {
     color: var(--light-color);
-    font-size: clamp(0.9rem, 1.6vw, 1.1rem);
+    font-size: 1.5rem;
     transition: var(--transition);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 40px;
-    min-width: 40px;
 }
 
 .social-links a:hover {
     color: var(--secondary-color);
-    transform: translateY(-2px);
+    transform: translateY(-5px);
 }
 
 /* Responsive Styles */
-
-/* Ultra-wide and 2K/4K Displays (1920px and above) */
-@media (min-width: 1920px) {
+@media (max-width: 1024px) {
     .container {
-        max-width: 1600px;
+        padding: 0 20px;
     }
     header h1 {
-        font-size: 3.2rem;
+        font-size: 2.8rem;
     }
     .subtitle {
-        font-size: 1.3rem;
-    }
-    nav a {
-        font-size: 1rem;
-    }
-    section h2 {
-        font-size: 2.5rem;
-    }
-    .content-box {
-        max-width: 650px;
-    }
-    .content-box p,
-    .education-item .degree,
-    .education-item .date {
-        font-size: 0.95rem;
-    }
-    .btn {
-        font-size: 0.85rem;
-        padding: 0.6rem 1.6rem;
-    }
-    .skills-grid {
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    }
-}
-
-/* Large Laptops and Desktops (1200px - 1919px) */
-@media (max-width: 1199px) {
-    .container {
-        max-width: 850px;
-        padding: 0 10px;
-    }
-    header h1 {
-        font-size: 2.2rem;
-    }
-    .subtitle {
-        font-size: 0.95rem;
+        font-size: 1.2rem;
     }
     nav li {
-        margin: 0 0.5rem;
-    }
-    nav a {
-        font-size: 0.85rem;
-    }
-    section h2 {
-        font-size: 1.7rem;
-    }
-    .content-box {
-        padding: 1.2rem;
-        max-width: 500px;
-    }
-    .skills-grid {
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        margin: 0 1rem;
     }
 }
 
-/* Tablets and Small Laptops (768px - 1199px) */
-@media (max-width: 991px) {
-    .container {
-        padding: 0 8px;
-    }
-    header {
-        padding: 1.6rem 0;
-    }
-    header h1 {
-        font-size: 2rem;
-    }
-    .subtitle {
-        font-size: 0.85rem;
-    }
-    nav .container {
-        padding: 0.4rem 8px;
-    }
-    nav li {
-        margin: 0 0.4rem;
-    }
-    nav a {
-        font-size: 0.8rem;
-        padding: 0.15rem 0.4rem;
-    }
-    .btn {
-        padding: 0.4rem 0.9rem;
-        font-size: 0.75rem;
-    }
-    section {
-        padding: 25px 5px;
-    }
-    section h2 {
-        font-size: 1.5rem;
-        margin-bottom: 0.9rem;
-    }
-    section h2::after {
-        width: 45px;
-        height: 1.5px;
-    }
-    .content-box {
-        padding: 1rem;
-    }
-    .contact-items {
-        gap: 0.5rem;
-    }
-    .tech-list {
-        gap: 0.5rem;
-    }
-}
-
-/* Large Smartphones and Small Tablets (481px - 767px) */
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     body {
         padding-top: 0;
     }
     header {
-        padding: 1.3rem 0;
-    }
-    header h1 {
-        font-size: 1.8rem;
-    }
-    .subtitle {
-        font-size: 0.8rem;
+        padding: 2rem 0;
     }
     nav .container {
         flex-wrap: wrap;
         position: relative;
-        padding: 0.3rem 6px;
+        padding: 0.5rem 20px;
     }
     .hamburger {
         display: block;
@@ -817,12 +710,12 @@ footer {
         position: absolute;
         top: 100%;
         left: 0;
-        padding: 0.5rem 0;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        padding: 1rem 0;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
         transform: translateY(-20px);
         opacity: 0;
         visibility: hidden;
-        transition: transform 0.15s ease, opacity 0.15s ease, visibility 0.15s ease;
+        transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
     }
     nav ul.active {
         display: flex;
@@ -831,686 +724,88 @@ footer {
         visibility: visible;
     }
     nav li {
-        margin: 0.4rem 0;
+        margin: 0.8rem 0;
         text-align: center;
     }
     nav a {
-        font-size: 0.85rem;
-        padding: 0.4rem;
+        font-size: 1.2rem;
+        padding: 0.8rem;
         justify-content: center;
     }
     .btn {
-        padding: 0.35rem 0.7rem;
-        font-size: 0.7rem;
-    }
-    section {
-        padding: 20px 4px;
-    }
-    section h2 {
-        font-size: 1.4rem;
-        margin-bottom: 0.7rem;
-    }
-    section h2::after {
-        width: 35px;
-    }
-    .content-box {
-        padding: 0.8rem;
-        max-width: 100%;
+        padding: 0.6rem 1.5rem;
     }
     .contact-items {
         flex-direction: column;
-        align-items: stretch;
-        gap: 0.4rem;
+        align-items: center;
+        gap: 1rem;
     }
     .contact-item {
-        padding: 0.35rem 0.5rem;
-        font-size: 0.75rem;
+        width: 100%;
+        max-width: 300px;
         text-align: center;
     }
-    .contact-icon {
-        font-size: 1.2rem;
-    }
     .tech-list {
         flex-direction: column;
-        align-items: stretch;
-    }
-    .tech-list h4 {
-        font-size: 1rem;
-    }
-    .tech-items li {
-        font-size: 0.75rem;
-        padding: 0.35rem 0.5rem;
-    }
-    .experience-item {
-        padding: 0.7rem;
-    }
-    .experience-item h3 {
-        font-size: 1.2rem;
-    }
-    .experience-item .position,
-    .experience-item .date {
-        font-size: 0.75rem;
-    }
-    .skills-grid {
-        grid-template-columns: 1fr;
-        gap: 0.5rem;
-    }
-    .skill-category h3 {
-        font-size: 1.2rem;
-    }
-    .highlight-list li {
-        font-size: 0.75rem;
-        padding: 0.4rem 0.5rem;
-    }
-    .social-links {
-        gap: 0.9rem;
-    }
-    .social-links a {
-        font-size: 1rem;
-    }
-}
-
-/* Small Smartphones (361px - 480px) */
-@media (max-width: 480px) {
-    .container {
-        padding: 0 5px;
-    }
-    header {
-        padding: 1rem 0;
-    }
-    header h1 {
-        font-size: 1.6rem;
-    }
-    .subtitle {
-        font-size: 0.75rem;
-    }
-    nav .container {
-        padding: 0.25rem 5px;
-    }
-    .hamburger span {
-        width: 16px;
-        height: 1.2px;
-        margin: 2.5px 0;
-    }
-    nav a {
-        font-size: 0.8rem;
-        padding: 0.35rem;
-    }
-    .btn {
-        padding: 0.3rem 0.6rem;
-        font-size: 0.65rem;
-    }
-    section {
-        padding: 15px 3px;
-    }
-    section h2 {
-        font-size: 1.3rem;
-        margin-bottom: 0.6rem;
-    }
-    section h2::after {
-        width: 30px;
-    }
-    .content-box {
-        padding: 0.7rem;
-    }
-    .content-box p,
-    .education-item .degree,
-    .education-item .date {
-        font-size: 0.7rem;
-    }
-    .contact-card.luxury-box {
-        padding: 0.7rem;
-    }
-    .contact-item {
-        font-size: 0.7rem;
-        padding: 0.3rem 0.4rem;
-    }
-    .contact-icon {
-        font-size: 1.1rem;
-    }
-    .tech-list h4 {
-        font-size: 0.95rem;
-    }
-    .tech-items li {
-        font-size: 0.7rem;
-        padding: 0.3rem 0.4rem;
-    }
-    .experience-item {
-        padding: 0.6rem;
-    }
-    .experience-item h3 {
-        font-size: 1.1rem;
-    }
-    .experience-item li {
-        font-size: 0.65rem;
-    }
-    .skill-category h3 {
-        font-size: 1.1rem;
-    }
-    .skill-category p {
-        font-size: 0.65rem;
-    }
-    .highlight-list li {
-        font-size: 0.7rem;
-        padding: 0.35rem 0.4rem;
-    }
-    .value-proposition {
-        font-size: 0.7rem;
-        padding: 0.5rem;
-    }
-    .social-links {
-        gap: 0.8rem;
-    }
-    .social-links a {
-        font-size: 0.95rem;
-    }
-}
-
-/* Extra Small Smartphones (321px - 360px) */
-@media (max-width: 360px) {
-    body {
-        font-size: 10px;
-        line-height: 1.25;
-    }
-    .container {
-        padding: 0 3px;
-        width: 100vw;
-        max-width: 100vw;
-    }
-    header {
-        padding: 0.8rem 0;
-        box-shadow: none;
-    }
-    header h1 {
-        font-size: 1.35rem;
-        letter-spacing: 0.6px;
-    }
-    .subtitle {
-        font-size: 0.65rem;
-    }
-    nav {
-        background: var(--dark-color);
-        box-shadow: none;
-    }
-    nav .container {
-        padding: 0.15rem 3px;
-    }
-    .hamburger span {
-        width: 14px;
-        height: 1px;
-        margin: 2px 0;
-    }
-    nav a {
-        font-size: 0.75rem;
-        padding: 0.25rem 0.4rem;
-    }
-    nav ul {
-        padding: 0.3rem 0;
-        box-shadow: none;
-    }
-    nav li {
-        margin: 0.25rem 0;
-    }
-    .btn {
-        padding: 0.25rem 0.5rem;
-        font-size: 0.6rem;
-        min-height: 34px;
-        border-radius: 16px;
-    }
-    section {
-        padding: 12px 2px;
-        min-height: auto;
-    }
-    section h2 {
-        font-size: 1.15rem;
-        margin-bottom: 0.5rem;
-        letter-spacing: 0.6px;
-    }
-    section h2::after {
-        width: 25px;
-        height: 1px;
-    }
-    .content-box {
-        padding: 0.5rem;
-        border-radius: 5px;
-        box-shadow: none;
-        border: none;
-    }
-    .content-box p,
-    .education-item .degree,
-    .education-item .date {
-        font-size: 0.65rem;
-        line-height: 1.25;
-    }
-    .content-box::before {
-        display: none;
-    }
-    .contact-card.luxury-box {
-        padding: 0.5rem;
-        border-radius: 5px;
-        box-shadow: none;
-        border: none;
-    }
-    .contact-items {
-        gap: 0.3rem;
-    }
-    .contact-item {
-        font-size: 0.65rem;
-        padding: 0.25rem 0.35rem;
-        border-radius: 3px;
-        gap: 0.3rem;
-        min-height: 34px;
-    }
-    .contact-icon {
-        font-size: 0.95rem;
-    }
-    .tech-list {
-        gap: 0.3rem;
-    }
-    .tech-list h4 {
-        font-size: 0.85rem;
-        margin-bottom: 0.3rem;
-    }
-    .tech-items li {
-        font-size: 0.65rem;
-        padding: 0.25rem 0.35rem;
-    }
-    .tech-items li::before {
-        font-size: 0.45rem;
-        margin-right: 0.3rem;
-    }
-    .experience-item {
-        padding: 0.4rem;
-        box-shadow: none;
-    }
-    .experience-item h3 {
-        font-size: 1rem;
-    }
-    .experience-item .position,
-    .experience-item .date {
-        font-size: 0.65rem;
-    }
-    .experience-item li {
-        font-size: 0.6rem;
-        padding-left: 0.8rem;
-    }
-    .experience-item li::before {
-        font-size: 0.45rem;
-    }
-    .skills-grid {
-        grid-template-columns: 1fr;
-        gap: 0.3rem;
-    }
-    .skill-category {
-        padding: 0.4rem;
-        box-shadow: none;
-    }
-    .skill-category h3 {
-        font-size: 1rem;
-    }
-    .skill-category p {
-        font-size: 0.6rem;
-        padding-left: 0.8rem;
-    }
-    .skill-category p::before {
-        font-size: 0.45rem;
-    }
-    .highlight-list {
-        padding-left: 0.8rem;
-    }
-    .highlight-list li {
-        font-size: 0.65rem;
-        padding: 0.25rem 0.35rem;
-    }
-    .highlight-list li::before {
-        left: -0.8rem;
-        font-size: 0.45rem;
-    }
-    .value-proposition {
-        font-size: 0.65rem;
-        padding: 0.4rem;
-        box-shadow: none;
-    }
-    .social-links {
-        gap: 0.7rem;
-    }
-    .social-links a {
-        font-size: 0.85rem;
-        min-height: 34px;
-        min-width: 34px;
-    }
-    footer {
-        padding: 0.5rem 0;
-        box-shadow: none;
-    }
-}
-
-/* Extra Small Smartphones (up to 320px) */
-@media (max-width: 320px) {
-    body {
-        font-size: 10px;
-        line-height: 1.2;
-    }
-    .container {
-        padding: 0 2px;
-        width: 100vw;
-        max-width: 100vw;
-    }
-    header {
-        padding: 0.7rem 0;
-    }
-    header h1 {
-        font-size: 1.3rem;
-        letter-spacing: 0.5px;
-    }
-    .subtitle {
-        font-size: 0.6rem;
-    }
-    nav {
-        background: var(--dark-color);
-    }
-    nav .container {
-        padding: 0.1rem 2px;
-    }
-    .hamburger span {
-        width: 13px;
-        height: 0.9px;
-        margin: 1.8px 0;
-    }
-    nav a {
-        font-size: 0.7rem;
-        padding: 0.2rem 0.35rem;
-    }
-    nav ul {
-        padding: 0.25rem 0;
-    }
-    nav li {
-        margin: 0.2rem 0;
-    }
-    .btn {
-        padding: 0.2rem 0.4rem;
-        font-size: 0.55rem;
-        min-height: 32px;
-        border-radius: 14px;
-    }
-    section {
-        padding: 10px 1px;
-        min-height: auto;
-    }
-    section h2 {
-        font-size: 1.1rem;
-        margin-bottom: 0.4rem;
-        letter-spacing: 0.5px;
-    }
-    section h2::after {
-        width: 20px;
-        height: 0.8px;
-    }
-    .content-box {
-        padding: 0.4rem;
-        border-radius: 4px;
-        box-shadow: none;
-        border: none;
-    }
-    .content-box p,
-    .education-item .degree,
-    .education-item .date {
-        font-size: 0.6rem;
-        line-height: 1.2;
-    }
-    .contact-card.luxury-box {
-        padding: 0.4rem;
-        border-radius: 4px;
-        box-shadow: none;
-        border: none;
-    }
-    .contact-items {
-        gap: 0.25rem;
-    }
-    .contact-item {
-        font-size: 0.6rem;
-        padding: 0.2rem 0.3rem;
-        border-radius: 2px;
-        gap: 0.25rem;
-        min-height: 32px;
-    }
-    .contact-icon {
-        font-size: 0.9rem;
-    }
-    .tech-list {
-        gap: 0.25rem;
-    }
-    .tech-list h4 {
-        font-size: 0.8rem;
-        margin-bottom: 0.25rem;
-    }
-    .tech-items li {
-        font-size: 0.6rem;
-        padding: 0.2rem 0.3rem;
-    }
-    .tech-items li::before {
-        font-size: 0.4rem;
-        margin-right: 0.25rem;
-    }
-    .experience-item {
-        padding: 0.35rem;
-    }
-    .experience-item h3 {
-        font-size: 0.95rem;
-    }
-    .experience-item .position,
-    .experience-item .date {
-        font-size: 0.6rem;
-    }
-    .experience-item li {
-        font-size: 0.55rem;
-        padding-left: 0.7rem;
-    }
-    .experience-item li::before {
-        font-size: 0.4rem;
-    }
-    .skills-grid {
-        grid-template-columns: 1fr;
-        gap: 0.25rem;
-    }
-    .skill-category {
-        padding: 0.35rem;
-    }
-    .skill-category h3 {
-        font-size: 0.95rem;
-    }
-    .skill-category p {
-        font-size: 0.55rem;
-        padding-left: 0.7rem;
-    }
-    .skill-category p::before {
-        font-size: 0.4rem;
-    }
-    .highlight-list {
-        padding-left: 0.7rem;
-    }
-    .highlight-list li {
-        font-size: 0.6rem;
-        padding: 0.2rem 0.3rem;
-    }
-    .highlight-list li::before {
-        left: -0.7rem;
-        font-size: 0.4rem;
-    }
-    .value-proposition {
-        font-size: 0.6rem;
-        padding: 0.35rem;
-    }
-    .social-links {
-        gap: 0.6rem;
-    }
-    .social-links a {
-        font-size: 0.8rem;
-        min-height: 32px;
-        min-width: 32px;
-    }
-    footer {
-        padding: 0.4rem 0;
-    }
-}
-
-/* Tiny Smartphones (up to 280px) */
-@media (max-width: 280px) {
-    body {
-        font-size: 9px;
-        line-height: 1.15;
-    }
-    header h1 {
-        font-size: 1.2rem;
-    }
-    .subtitle {
-        font-size: 0.55rem;
-    }
-    .container {
-        padding: 0 1px;
-    }
-    nav .container {
-        padding: 0.05rem 1px;
-    }
-    .hamburger span {
-        width: 12px;
-        height: 0.8px;
-        margin: 1.5px 0;
-    }
-    nav a {
-        font-size: 0.65rem;
-        padding: 0.15rem 0.3rem;
-    }
-    section {
-        padding: 8px 0.5px;
-    }
-    section h2 {
-        font-size: 1rem;
-    }
-    section h2::after {
-        width: 18px;
-    }
-    .content-box {
-        padding: 0.3rem;
-    }
-    .content-box p,
-    .education-item .degree,
-    .education-item .date {
-        font-size: 0.55rem;
-    }
-    .contact-item {
-        font-size: 0.55rem;
-        padding: 0.15rem 0.25rem;
-        gap: 0.2rem;
-        min-height: 30px;
-    }
-    .contact-icon {
-        font-size: 0.85rem;
-    }
-    .tech-list h4 {
-        font-size: 0.75rem;
-    }
-    .tech-items li {
-        font-size: 0.55rem;
-        padding: 0.15rem 0.25rem;
-    }
-    .experience-item h3 {
-        font-size: 0.9rem;
-    }
-    .skill-category h3 {
-        font-size: 0.9rem;
-    }
-    .highlight-list li {
-        font-size: 0.55rem;
-    }
-    .value-proposition {
-        font-size: 0.55rem;
-    }
-    .social-links a {
-        font-size: 0.75rem;
-        min-height: 30px;
-        min-width: 30px;
-    }
-}
-
-/* Landscape Orientation for Mobile Devices */
-@media (max-height: 500px) and (orientation: landscape) {
-    header {
-        padding: 0.7rem 0;
-    }
-    section {
-        min-height: auto;
-        padding: 10px 3px;
-    }
-    .content-box {
-        padding: 0.7rem;
-        max-width: 99%;
-    }
-    .contact-items {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 0.4rem;
-    }
-    .contact-item {
-        width: 49%;
-        padding: 0.25rem 0.4rem;
-    }
-    .tech-list {
-        flex-direction: row;
-        flex-wrap: wrap;
+        align-items: center;
     }
     .tech-list > div {
-        width: 49%;
+        width: 100%;
+        max-width: 300px;
     }
     .skills-grid {
-        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        grid-template-columns: 1fr;
+        gap: 1rem;
     }
     section h2 {
-        font-size: 1.2rem;
-    }
-}
-
-/* High Pixel Density Displays */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-    body {
-        -webkit-font-smoothing: antialiased;
-        text-rendering: optimizeLegibility;
+        font-size: 2rem;
     }
     .content-box {
-        border-width: 0.4px;
+        padding: 2rem;
     }
 }
 
-/* Dark Mode Preference */
-@media (prefers-color-scheme: dark) {
-    /* Existing dark colors work perfectly */
-}
-
-/* Reduced Motion Preference */
-@media (prefers-reduced-motion: reduce) {
-    * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
     }
-    section {
-        opacity: 1;
-        transform: none;
-        animation: none;
+    header h1 {
+        font-size: 2rem;
     }
-    .content-box:hover,
-    .btn:hover,
-    .contact-item:hover,
-    .tech-items li:hover,
-    .experience-item:hover,
-    .skill-category:hover,
-    .highlight-list li:hover,
-    .value-proposition:hover,
-    .content-box p:hover,
-    .social-links a:hover {
-        transform: none;
-        box-shadow: inherit;
+    .subtitle {
+        font-size: 1rem;
+    }
+    nav .container {
+        padding: 0.5rem 15px;
+    }
+    .hamburger span {
+        width: 25px;
+        height: 2px;
+        margin: 5px 0;
+    }
+    nav a {
+        font-size: 1rem;
+    }
+    .btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+    .contact-card.luxury-box {
+        padding: 1.5rem;
+    }
+    .contact-item {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+        min-width: 180px;
+    }
+    .contact-icon {
+        font-size: 1.6rem;
+    }
+    section h2 {
+        font-size: 1.8rem;
+    }
+    .content-box {
+        padding: 1.5rem;
     }
 }
 
@@ -1523,33 +818,31 @@ footer {
         background: white;
         color: #000;
         padding-top: 0;
-        font-size: 8pt;
     }
     header {
         background: none;
         box-shadow: none;
-        padding: 0.5rem 0;
     }
     header h1 {
-        font-size: 1.3rem;
+        font-size: 2rem;
         color: #000;
         background: none;
     }
     .subtitle {
         color: #000;
-        font-size: 0.7rem;
+        font-size: 1rem;
     }
     .content-box {
         background: none;
+        backdrop-filter: none;
         box-shadow: none;
         border: 1px solid #ddd;
-        padding: 0.5rem;
     }
     .content-box::before {
         display: none;
     }
-    .contact-item, .contact-item a,
-    .tech-items li, .experience-item li,
+    .contact-item, .contact-item a, 
+    .tech-items li, .experience-item li, 
     .highlight-list li, .value-proposition,
     .content-box p, .education-item .degree,
     .education-item .date, .education-item .coursework h4 {
@@ -1559,17 +852,5 @@ footer {
     .experience-item li::before, .highlight-list li::before,
     .skill-category p::before, .education-item li::before {
         color: #666;
-    }
-    section {
-        background: none;
-        padding: 0.5rem 0;
-        min-height: auto;
-    }
-    section h2 {
-        color: #000;
-        font-size: 1.1rem;
-    }
-    section h2::after {
-        background: #666;
     }
 }
