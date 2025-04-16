@@ -4,7 +4,6 @@
     // Block all possible right-click actions
     document.addEventListener('contextmenu', function(e) {
         e.preventDefault();
-        alert('Right-click is disabled');
         return false;
     }, false);
     
@@ -26,7 +25,6 @@
         if (e.ctrlKey || e.metaKey) {
             e.preventDefault();
             e.stopPropagation();
-            alert('Keyboard shortcuts are disabled');
             return false;
         }
         
@@ -40,7 +38,6 @@
         if (blockedKeys.includes(e.key)) {
             e.preventDefault();
             e.stopPropagation();
-            alert('Function keys are disabled');
             return false;
         }
         
@@ -60,37 +57,14 @@
         };
         
         const threshold = 160;
-        const widthThreshold = window.innerWidth;
-        const heightThreshold = window.innerHeight;
         
-        function emitEvent(isOpen, orientation) {
-            if (isOpen !== devtools.open || orientation !== devtools.orientation) {
+        function emitEvent(isOpen) {
+            if (isOpen !== devtools.open) {
                 devtools.open = isOpen;
-                devtools.orientation = orientation;
-                
                 if (isOpen) {
-                    document.body.innerHTML = `
-                        <div style="
-                            position:fixed;
-                            top:0;
-                            left:0;
-                            width:100%;
-                            height:100%;
-                            background:black;
-                            color:red;
-                            display:flex;
-                            justify-content:center;
-                            align-items:center;
-                            font-size:24px;
-                            z-index:999999;
-                        ">
-                            Developer Tools Detected!<br>
-                            This page will now reload.
-                        </div>
-                    `;
                     setTimeout(() => {
                         window.location.reload();
-                    }, 1000);
+                    }, 100);
                 }
             }
         }
@@ -100,18 +74,16 @@
             const height = window.outerHeight - window.innerHeight;
             
             if (width > threshold || height > threshold) {
-                emitEvent(true, width > threshold ? 'vertical' : 'horizontal');
-            } else {
-                emitEvent(false, null);
+                emitEvent(true);
             }
         }, 500);
         
-        // Double protection by checking console methods
+        // Console method protection
         const consoleMethods = ['log', 'warn', 'error', 'info', 'debug', 'table', 'dir'];
         consoleMethods.forEach(method => {
             const original = console[method];
             console[method] = function() {
-                emitEvent(true, 'console');
+                emitEvent(true);
                 original.apply(console, arguments);
             };
         });
@@ -122,47 +94,15 @@
         window.top.location = window.self.location;
     }
     
-    // Block print screen and clipboard access
+    // Block print screen
     document.addEventListener('keyup', function(e) {
         if (e.key === 'PrintScreen') {
             navigator.clipboard.writeText('').catch(() => {});
-            alert('Screenshots are disabled');
         }
     });
     
     // Anti-debugging techniques
     function debuggerProtection() {
-        function detectDevTool(allow) {
-            if (isNaN(+allow)) {
-                document.body.innerHTML = `
-                    <div style="
-                        position:fixed;
-                        top:0;
-                        left:0;
-                        width:100%;
-                        height:100%;
-                        background:black;
-                        color:red;
-                        display:flex;
-                        justify-content:center;
-                        align-items:center;
-                        font-size:24px;
-                        z-index:999999;
-                    ">
-                        Debugger Detected!<br>
-                        This page will now reload.
-                    </div>
-                `;
-                setTimeout(() => {
-                    window.location.reload();
-                }, 1000);
-            }
-        }
-        
-        detectDevTool.toString = function() {
-            detectDevTool();
-        };
-        
         setInterval(function() {
             (function() {
                 return false;
@@ -179,7 +119,6 @@
         if ((e.ctrlKey || e.metaKey) && ['s', 'p', 'o', 'u', 'i', 'j'].includes(e.key.toLowerCase())) {
             e.preventDefault();
             e.stopPropagation();
-            alert('This action is disabled');
             return false;
         }
     });
@@ -192,28 +131,9 @@
     // Block console.clear attempts
     const originalClear = console.clear;
     console.clear = function() {
-        document.body.innerHTML = `
-            <div style="
-                position:fixed;
-                top:0;
-                left:0;
-                width:100%;
-                height:100%;
-                background:black;
-                color:red;
-                display:flex;
-                justify-content:center;
-                align-items:center;
-                font-size:24px;
-                z-index:999999;
-            ">
-                Unauthorized console access detected!<br>
-                This page will now reload.
-            </div>
-        `;
         setTimeout(() => {
             window.location.reload();
-        }, 1000);
+        }, 100);
         originalClear.apply(console, arguments);
     };
 })();
