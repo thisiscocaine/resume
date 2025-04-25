@@ -1,19 +1,49 @@
-// Ultra-Secure Validation & Protection System (v2.0)
+// Nuclear-Secure Access Control System (v4.0)
 (function() {
     'use strict';
     
-    // 1. ENCRYPTED VALIDATION LAYER
+    // 0. EXTERNAL ACCESS LOCKDOWN (NEW)
+    const enforceAuthorizedAccess = () => {
+        const ALLOWED_DOMAINS = [
+            'resume.aaryan.com.np',
+            'aaryan.github.io' // If using GitHub Pages
+        ];
+        
+        const currentDomain = window.location.hostname;
+        const isAuthorized = ALLOWED_DOMAINS.some(domain => 
+            currentDomain === domain || currentDomain.endsWith('.' + domain)
+        );
+        
+        if (!isAuthorized) {
+            // Immediate redirect with no traces
+            window.location.replace('https://login.aaryan.com.np?reason=unauthorized_domain');
+            throw new Error("Nuclear lockdown activated");
+        }
+        
+        // Verify SSL (except for local testing)
+        if (location.protocol !== 'https:' && !location.hostname.includes('localhost')) {
+            window.location.href = 'https://' + location.host + location.pathname;
+            throw new Error("Insecure protocol blocked");
+        }
+    };
+
+    // 1. ENCRYPTED VALIDATION LAYER (ENHANCED)
     const cryptoValidation = () => {
         try {
-            // Dynamic key generation based on multiple factors
-            const secretSalt = window.location.hostname.split('').reverse().join('');
-            const timeFactor = Math.floor(Date.now() / 3600000); // Changes hourly
-            const cryptoKey = btoa(`ARYAN_ULTRA_${secretSalt}_${timeFactor}`);
+            // Dynamic military-grade key generation
+            const secretSalt = window.crypto.getRandomValues(new Uint8Array(16)).join('');
+            const timeFactor = Math.floor(Date.now() / 3600000); // Hourly rotation
+            const cryptoKey = btoa(`ARYAN_${secretSalt}_${timeFactor}_${navigator.userAgent}`);
             
-            // Multi-factor validation
+            // Three-factor authentication
             const storedToken = localStorage.getItem('access_token');
             const sessionKey = sessionStorage.getItem('session_key');
-            const expectedToken = CryptoJS.SHA512(`${cryptoKey}_${sessionKey}`).toString();
+            const devicePrint = CryptoJS.SHA256(navigator.platform + screen.width + screen.colorDepth).toString();
+            
+            const expectedToken = CryptoJS.HmacSHA512(
+                `${cryptoKey}_${sessionKey}_${devicePrint}`, 
+                secretSalt
+            ).toString();
             
             if (!storedToken || storedToken !== expectedToken) {
                 throw new SecurityError("Invalid security token");
@@ -21,92 +51,130 @@
             
             return true;
         } catch (e) {
-            // Nuclear option for failed validation
-            document.body.innerHTML = '<h1>Security Violation Detected</h1>';
-            window.location.href = 'https://login.aaryan.com.np?code=403';
+            // Nuclear response
+            localStorage.clear();
+            sessionStorage.clear();
+            window.location.replace('https://login.aaryan.com.np?code=nuclear_lockdown');
             return false;
         }
     };
 
-    // 2. ANTI-TAMPERING MECHANISMS
+    // 2. TAMPER-PROOF PROTECTION (ENHANCED)
     const installAntiTamper = () => {
-        // Memory checksum validation
-        const codeIntegrityCheck = () => {
-            const knownHash = "a1b2c3d4e5f6"; // Should be dynamically generated in production
-            const currentHash = CryptoJS.SHA256(document.scripts[0].innerHTML).toString().substr(0,12);
-            if (currentHash !== knownHash) {
-                document.body.innerHTML = '<h1>Code Tampering Detected</h1>';
-                window.location.replace('https://security.aaryan.com.np/breach');
-            }
-        };
-
-        // Continuous monitoring
-        setInterval(codeIntegrityCheck, 30000);
-        document.addEventListener('DOMContentLoaded', codeIntegrityCheck);
-
-        // Console protection
-        Object.defineProperty(window, 'console', {
-            get: () => {
-                window.location.replace('https://security.aaryan.com.np/console_attempt');
-                return {
-                    log: () => {},
-                    warn: () => {},
-                    error: () => {}
-                };
-            }
-        });
-    };
-
-    // 3. ADVANCED DEBUGGER PROTECTION
-    const debuggerDefense = () => {
-        const debuggerCheck = () => {
-            const startTime = performance.now();
-            (function() {
-                (function(f){f(f)})(function(f){f(f)});
-            })();
-            if (performance.now() - startTime > 100) {
-                document.body.innerHTML = '';
-                window.location.href = 'https://security.aaryan.com.np/debugger_detected';
+        // Real-time checksum validation
+        const knownHash = CryptoJS.SHA256(window.location.href).toString().substr(0, 16);
+        const verifyIntegrity = () => {
+            try {
+                const currentHash = CryptoJS.SHA256(document.documentElement.outerHTML).toString().substr(0, 16);
+                if (currentHash !== knownHash) {
+                    window.location.replace('https://security.aaryan.com.np/tamper_detected');
+                }
+            } catch (e) {
+                window.location.replace('https://login.aaryan.com.np?code=integrity_failure');
             }
         };
         
-        setInterval(debuggerCheck, Math.random() * 5000 + 1000);
+        // Memory-hardened protection
+        const createMemoryTrap = () => {
+            const trap = new ArrayBuffer(1e6); // 1MB memory trap
+            const trapKey = CryptoJS.SHA256(trap.toString()).toString();
+            return () => {
+                if (CryptoJS.SHA256(trap.toString()).toString() !== trapKey) {
+                    window.location.replace('https://security.aaryan.com.np/memory_violation');
+                }
+            };
+        };
+        
+        setInterval(verifyIntegrity, 15000);
+        setInterval(createMemoryTrap(), 30000);
+        
+        // Console annihilation
+        Object.defineProperty(window, 'console', {
+            get: () => {
+                window.location.replace('https://login.aaryan.com.np?code=console_breach');
+                return new Proxy({}, {
+                    get: () => () => {}
+                });
+            },
+            configurable: false,
+            enumerable: false
+        });
     };
 
-    // 4. SESSION SECURITY
+    // 3. DEBUGGER NUCLEAR DEFENSE (ENHANCED)
+    const debuggerDefense = () => {
+        const debuggerCheck = () => {
+            const start = new Date().getTime();
+            (function() {
+                return (function(f){f(f)})(function(f){f(f)});
+            })();
+            if (new Date().getTime() - start > 200) {
+                document.body.innerHTML = '<!DOCTYPE html><html><head><meta http-equiv="refresh" content="0; url=https://security.aaryan.com.np/debugger_detected"></head></html>';
+                window.stop();
+            }
+        };
+        
+        setInterval(debuggerCheck, Math.random() * 3000 + 1000);
+        
+        // Anti-debugging traps
+        Function.prototype.constructor = function() {
+            window.location.replace('https://login.aaryan.com.np?code=debugger_trap');
+            return function(){};
+        };
+    };
+
+    // 4. SESSION LOCKDOWN (ENHANCED)
     const secureSession = () => {
-        // One-time session initialization
-        if (!sessionStorage.getItem('session_initialized')) {
-            const sessionKey = CryptoJS.lib.WordArray.random(32).toString();
-            sessionStorage.setItem('session_key', sessionKey);
-            sessionStorage.setItem('session_initialized', 'true');
+        if (!sessionStorage.getItem('nuclear_initialized')) {
+            // Generate crypto-strong tokens
+            const sessionKey = window.crypto.getRandomValues(new Uint32Array(8)).join('-');
+            const accessToken = window.crypto.getRandomValues(new Uint32Array(16)).join('-');
             
-            // Generate and store the access token
-            const secretSalt = window.location.hostname.split('').reverse().join('');
-            const cryptoKey = btoa(`ARYAN_ULTRA_${secretSalt}`);
-            const accessToken = CryptoJS.SHA512(`${cryptoKey}_${sessionKey}`).toString();
-            localStorage.setItem('access_token', accessToken);
+            // Secure storage with expiration
+            sessionStorage.setItem('session_key', sessionKey);
+            localStorage.setItem('access_token', CryptoJS.AES.encrypt(
+                accessToken, 
+                navigator.userAgent
+            ).toString());
+            
+            sessionStorage.setItem('nuclear_initialized', 'true');
+            
+            // Self-destruct after 1 hour
+            setTimeout(() => {
+                sessionStorage.clear();
+                window.location.replace('https://login.aaryan.com.np?code=session_expired');
+            }, 3600000);
         }
     };
 
-    // 5. EXECUTION LAYER
+    // 5. MAIN EXECUTION (LOCKED DOWN)
     try {
-        // Initialize security systems
+        // Phase 0: Nuclear domain lockdown
+        enforceAuthorizedAccess();
+        
+        // Phase 1: Initialize security systems
         secureSession();
         installAntiTamper();
         debuggerDefense();
         
-        // Validate access
+        // Phase 2: Validate access
         if (!cryptoValidation()) return;
         
-        // Only execute main content if all checks pass
+        // Phase 3: Only execute after all checks
         document.addEventListener('DOMContentLoaded', () => {
-            document.getElementById('content').style.display = 'block';
+            // Final verification before showing content
+            if (window.self === window.top && 
+                document.visibilityState === 'visible' &&
+                location.protocol === 'https:') {
+                document.getElementById('content').style.display = 'block';
+            } else {
+                window.location.replace('https://login.aaryan.com.np?code=environment_fail');
+            }
         });
         
     } catch (e) {
-        // Final security fallback
+        // Nuclear fallback
         document.body.innerHTML = '';
-        window.location.replace('https://security.aaryan.com.np/error');
+        window.location.replace('https://security.aaryan.com.np/nuclear_fail');
     }
 })();
