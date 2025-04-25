@@ -46,6 +46,7 @@ header {
 }
 
 header h1 {
+    padding-top: 1.1875rem;
     font-size: 3.5rem;
     font-weight: 700;
     letter-spacing: 2px;
@@ -700,6 +701,7 @@ footer {
         padding: 0 25px;
     }
     header h1 {
+    	padding-top: 2.1875rem;
         font-size: 3rem;
         line-height: 1.2;
     }
@@ -732,6 +734,7 @@ footer {
         padding: 2rem 0;
     }
     header h1 {
+    	padding-top: 2.1875rem;
         font-size: 2.5rem;
     }
     .subtitle {
@@ -831,6 +834,7 @@ footer {
 /* Large smartphones (600px and below) */
 @media (max-width: 600px) {
     header h1 {
+    	padding-top: 2.1875rem;
         font-size: 2.2rem;
     }
     .subtitle {
@@ -880,6 +884,7 @@ footer {
         padding: 2rem 0;
     }
     header h1 {
+    	padding-top: 2.1875rem;
         font-size: 1.9rem;
     }
     nav .container {
@@ -951,6 +956,7 @@ footer {
 /* Extra small devices (360px and below) */
 @media (max-width: 360px) {
     header h1 {
+    	padding-top: 2.1875rem;
         font-size: 1.7rem;
     }
     .subtitle {
