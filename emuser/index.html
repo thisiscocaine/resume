@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+                <!-- Google Tag Manager -->
+            <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-5JGDM94N');</script>
+            <!-- End Google Tag Manager -->
+
+                    <!-- Google tag (gtag.js) -->
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-9QLSRW2VSM"></script>
+                <script>
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                
+                  gtag('config', 'G-9QLSRW2VSM');
+            </script>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aryan Aryal, a Cybersecurity Specialist with expertise in ethical hacking, penetration testing, and vulnerability assessment. Contact for secure solutions.">
+    <meta name="keywords" content="arisksec, cybersecurity specialist, ethical hacking, penetration testing, bug bounty, vulnerability assessment, Aryan Aryal">
+    <meta name="author" content="Aryan Aryal">
+    <meta name="robots" content="index, follow">
+    <meta name="google-site-verification" content="AlPVENgrB2EuXsFiFTxdTKSgBlNItZUTIonGRHetCuY" />
+    
+    <!-- Open Graph Tags for Social Media -->
+    <meta property="og:title" content="Aryan Aryal - Cybersecurity Specialist">
+    <meta property="og:description" content="Expert in ethical hacking, penetration testing, and vulnerability assessment. Contact Aryan Aryal for secure solutions.">
+    <meta property="og:image" content="https://www.aryanaryal.com.np/assets/images/profile.jpg">
+    <meta property="og:url" content="https://www.aryanaryal.com.np">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Aryan Aryal - Cybersecurity Specialist">
+    <meta name="twitter:description" content="Cybersecurity expert specializing in ethical hacking and penetration testing.">
+    <meta name="twitter:image" content="https://www.aryanaryal.com.np/assets/images/profile.jpg">
+
+    <!--script-src -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline'">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    
+    <title>Aryan Aryal - Cybersecurity Specialist</title>
+    
+    <!-- Preload Critical Assets -->
+    <link rel="preload" href="assets/style.css" as="style">
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.aryanaryal.com.np">
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Aryan Aryal",
+        "jobTitle": "Cybersecurity Specialist",
+        "description": "Expert in ethical hacking, penetration testing, and vulnerability assessment.",
+        "url": "https://www.aryanaryal.com.np",
+        "sameAs": [
+            "https://www.linkedin.com/in/aryan-aryal-arisksec",
+            "https://github.com/arisksec"
+        ],
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Kathmandu",
+            "addressCountry": "Nepal"
+        },
+        "email": "mailto:arisksec@mail.com"
+    }
+    </script>
+<style>
+/* Luxury Contact Box */
+.contact-card.luxury-box {
+    background: rgba(36, 36, 36, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: var(--border-radius);
+    padding: 2.5rem;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4), inset 0 0 10px rgba(212, 175, 55, 0.1);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-card.luxury-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(212, 175, 55, 0.2), transparent);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+
+.contact-card.luxury-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+}
+
+.contact-card.luxury-box:hover::before {
+    opacity: 1;
+}
+
+.contact-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.contact-item {
+    background: rgba(212, 175, 55, 0.1);
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    transition: var(--transition);
+    min-width: 220px;
+    flex: 0 1 auto;
+}
+
+.contact-item:hover {
+    background: rgba(212, 175, 55, 0.2);
+    color: var(--secondary-color);
+    transform: scale(1.05);
+}
+
+.contact-icon {
+    font-size: 1.8rem;
+    color: var(--accent-color);
+    transition: var(--transition);
+}
+
+.contact-item:hover .contact-icon {
+    color: var(--secondary-color);
+    transform: scale(1.3);
+}
+
+.contact-item a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contact-item a:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+.contact-item span {
+    font-weight: 500;
+}
+
+/* Pin Code Modal */
+.pin-modal {
+    display: none;
+    position: fixed;
+    top: 10rem;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.pin-modal.active {
+    display: flex;
+    opacity: 1;
+}
+
+.pin-modal-content {
+    background: var(--dark-color);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: var(--border-radius);
+    padding: clamp(1rem, 2vw, 1.5rem);
+    max-width: 90%;
+    width: 360px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    position: relative;
+    text-align: center;
+}
+
+.pin-modal-content h3 {
+    color: var(--secondary-color);
+    font-size: clamp(1.2rem, 2vw, 1.4rem);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.pin-input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 4px;
+    background: rgba(36, 36, 36, 0.9);
+    color: var(--text-color);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.pin-input:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
+}
+
+.pin-submit {
+    background: var(--secondary-color);
+    color: var(--dark-color);
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: var(--transition);
+    min-height: 36px;
+}
+
+.pin-submit:hover {
+    background: #ffaa00;
+    transform: translateY(-1px);
+}
+
+.pin-error {
+    color: var(--accent-color);
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    display: none;
+}
+
+.pin-close {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: none;
+    border: none;
+    color: var(--text-light);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.pin-close:hover {
+    color: var(--secondary-color);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .contact-card.luxury-box {
+        padding: 2rem;
+    }
+    .contact-items {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    .contact-item {
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
+    }
+    .pin-modal-content {
+        width: 90%;
+        padding: 1.2rem;
+    }
+    .pin-modal-content h3 {
+        font-size: 1.3rem;
+    }
+    .pin-input {
+        font-size: 0.9rem;
+    }
+    .pin-submit {
+        font-size: 0.85rem;
+        padding: 0.4rem 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-card.luxury-box {
+        padding: 1.5rem;
+    }
+    .contact-item {
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+    }
+    .contact-icon {
+        font-size: 1.6rem;
+    }
+    .pin-modal-content {
+        width: 95%;
+        padding: 1rem;
+    }
+    .pin-modal-content h3 {
+        font-size: 1.2rem;
+    }
+    .pin-input {
+        font-size: 0.85rem;
+        padding: 0.4rem;
+    }
+    .pin-submit {
+        font-size: 0.8rem;
+        padding: 0.35rem 1rem;
+        min-height: 32px;
+    }
+    .pin-error {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max personally identifiable information removed 0px) {
+    .pin-modal-content {
+        width: 98%;
+        padding: 0.8rem;
+    }
+    .pin-modal-content h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.8rem;
+    }
+    .pin-input {
+        font-size: 0.8rem;
+        padding: 0.3rem;
+    }
+    .pin-submit {
+        font-size: 0.75rem;
+        padding: 0.3rem 0.8rem;
+        min-height: 30px;
+    }
+    .pin-error {
+        font-size: 0.75rem;
+    }
+    .pin-close {
+        font-size: 1rem;
+        top: 0.3rem;
+        right: 0.3rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .contact-card.luxury-box {
+        background: none;
+        backdrop-filter: none;
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+    .contact-card.luxury-box::before {
+        display: none;
+    }
+    .contact-item {
+        background: none;
+        padding: 0.5rem;
+        transform: none;
+    }
+    .contact-item, .contact-item a {
+        color: #000;
+    }
+    .contact-icon {
+        color: #666;
+    }
+    .pin-modal {
+        display: none;
+    }
+}
+</style>
+</head>
+<body>
+
+
+    <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5JGDM94N"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+    
+    <header>
+        <div class="container">
+            <h1>Aryan Aryal</h1>
+            <p class="subtitle">Cybersecurity Specialist</p>
+        </div>
+    </header>
+
+    <nav id="navbar">
+        <div class="container">
+            <button class="hamburger" aria-label="Toggle Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul>
+                <li><a href="#introduction"><i class="fas fa-user"></i> Introduction</a></li>
+                <li><a href="#education"><i class="fas fa-graduation-cap"></i> Education</a></li>
+                <li><a href="#experience"><i class="fas fa-briefcase"></i> Experience</a></li>
+                <li><a href="#skills"><i class="fas fa-tools"></i> Skills</a></li>
+                <li><a href="#highlights"><i class="fas fa-star"></i> Highlights</a></li>
+            </ul>
+            <button id="download-pdf" class="btn">
+                <i class="fas fa-download"></i> Download CV
+            </button>
+            <div class="pin-modal" id="pin-modal">
+                <div class="pin-modal-content">
+                    <button class="pin-close" aria-label="Close Modal">×</button>
+                    <h3>Enter Code</h3>
+                    <input type="password" class="pin-input" id="pin-input" placeholder="Enter 8-digit pin" maxlength="8">
+                    <button class="pin-submit" id="pin-submit">Submit</button>
+                    <p class="pin-error" id="pin-error">Incorrect pin. Please try again.</p>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section id="contact-info">
+            <h2>Contact Information</h2>
+            <div class="contact-card luxury-box">
+                <div class="contact-items">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt contact-icon"></i>
+                        <span>Kathmandu, Nepal</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope contact-icon"></i>
+                        <a href="mailto:arisksec@mmail.com">arisksec@mail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-globe contact-icon"></i>
+                        <a href="https://www.aryanaryal.com.np" target="_blank">aryanaryal.com.np</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin contact-icon"></i>
+                        <a href="https://www.linkedin.com/in/aryan-aryal-arisksec" target="_blank">aryan-aryal-arisksec</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-github contact-icon"></i>
+                        <a href="https://github.com/arisksec" target="_blank">arisksec</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="introduction">
+            <h2>Introduction</h2>
+            <div class="content-box">
+                <p>I am Aryan Aryal, a strategically minded Cybersecurity Specialist with 4+ years' experience in ethical hacking, vulnerability assessment, and bug bounty programmes. Skilled in exploit development, secure coding, and identifying critical security flaws in enterprise systems. Proven track record of reporting impactful vulnerabilities to global organisations. Adept in penetration testing and threat modelling. Holds foundational experience as a Commercial Contracts Administrator, contributing to contractual reviews. Offers a balanced perspective of technical rigour and operational compliance within professional environments.</p>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <div class="content-box">
+                <div class="education-item">
+                    <h3>BIT, Tribhuvan University</h3>
+                    <p class="degree">Bachelors in Information Technology</p>
+                    <p class="date">Dec 2016 – Aug 2021</p>
+                    <div class="coursework">
+                        <h4>Coursework:</h4>
+                        <ul>
+                            <li>AI</li>
+                            <li>JAVA</li>
+                            <li>C/C++</li>
+                            <li>Python</li>
+                            <li>Compiler and Design Constructions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="experience">
+            <h2>Experience</h2>
+            <div class="content-box">
+                <div class="experience-item">
+                    <h3>Synack, Inc.</h3>
+                    <p class="position">Red Team</p>
+                    <p class="date">February 2025 - Present</p>
+                    <ul>
+                        <li>Performed authorised security assessments on client assets</li>
+                        <li>Identified and exploited vulnerabilities</li>
+                        <li>Delivered detailed reports</li>
+                        <li>Collaborated with Synack's global Red Team to strengthen enterprise-level security postures</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>Freelance (Self employed)</h3>
+                    <p class="position">Application Security Research</p>
+                    <p class="date">October 2020 - Present</p>
+                    <ul>
+                        <li>Conducted in-depth security research</li>
+                        <li>Identified vulnerabilities in web applications</li>
+                        <li>Reported bugs through bounty programmes</li>
+                        <li>Collaborated with global teams to enhance application security standards</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <h3>National CyberWatch Center</h3>
+                    <p class="position">CSDW Member</p>
+                    <p class="date">August 2024 - Present</p>
+                    <ul>
+                        <li>Contributed to cybersecurity skill development initiatives</li>
+                        <li>Collaborated on research</li>
+                        <li>Promoted best practices within the National CyberWatch Center community</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Core Competences</h2>
+            <div class="content-box">
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Bug Bounty & Ethical Hacking</h3>
+                        <p>Proficient in uncovering high-impact vulnerabilities (e.g., RCE, SSRF, SQLi) across web applications and networks.</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Penetration Testing</h3>
+                        <p>Hands-on experience with Burp Suite, Metasploit, Nmap etc. and OWASP methodologies.</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Commercial Contracts & Compliance</h3>
+                        <p>Knowledgeable in contract drafting, risk assessment, and SLA enforcement, ensuring security clauses align with business needs.</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Regulatory Frameworks</h3>
+                        <p>Familiarity with GDPR, ISO 27001, PCI-DSS, and integrating security into contractual agreements.</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Stakeholder Engagement</h3>
+                        <p>Effective at liaising between technical teams and legal/business units to mitigate risks.</p>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Contract Management Tools</h3>
+                        <p>Proficient in DocuSign, ContractWorks, and PandaDoc for contract drafting and compliance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Technologies</h2>
+            <div class="technologies">
+                <div class="tech-list">
+                    <div>
+                        <h4>Languages:</h4>
+                        <ul class="tech-items">
+                            <li>C++</li>
+                            <li>C</li>
+                            <li>Ruby</li>
+                            <li>Java</li>
+                            <li>Python</li>
+                            <li>C#</li>
+                            <li>SQL</li>
+                            <li>JavaScript</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>Technologies:</h4>
+                        <ul class="tech-items">
+                            <li>.NET</li>
+                            <li>Django</li>
+                            <li>MySQL</li>
+                            <li>SQL Server</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="highlights">
+            <h2>Career Highlights</h2>
+            <div class="content-box">
+                <ul class="highlight-list">
+                    <li>Successfully identified <strong>20+ critical vulnerabilities</strong> for multinational corporations, earning substantial rewards through platforms such as HackerOne and Bugcrowd.</li>
+                    <li>Reviewed and advised on <strong>commercial contracts</strong>, ensuring robust security provisions and compliance with data protection laws.</li>
+                    <li>Delivered <strong>clear, actionable reports</strong> to executive stakeholders, bridging the gap between technical findings and business impact.</li>
+                </ul>
+                <div class="value-proposition">
+                    <p><strong>Value Proposition:</strong> A rare blend of offensive security skills and contractual insight, enabling organisations to fortify defences while maintaining legal and commercial integrity.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="certifications">
+            <h2>Certifications</h2>
+            <div class="content-box">
+                <ul class="highlight-list">
+                    <li>OSCP - Offensive Security Certified Professional</li>
+                    <li>CEH - Certified Ethical Hacker</li>
+                    <li>CISSP - Certified Information Systems Security Professional</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© <span id="current-year">2025</span> Aryan Aryal. All rights reserved.</p>
+            <div class="social-links">
+                <a href="/cdn-cgi/l/email-protection#2c4d5e455f475f494f6c414d4540024f4341"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/aryan-aryal-arisksec" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/arisksec" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.aryanaryal.com.np" target="_blank"><i class="fas fa-globe"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script src="assets/security.js"></script>
+   <script src="assets/scritpt.js"></script>
+   <script src="assets/main.js"></script>
+</body>
+</html>
