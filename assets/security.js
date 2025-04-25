@@ -1,50 +1,71 @@
-// Simple XOR-based decoding for session token
-function decodeToken(encodedToken, key) {
-    const decoded = atob(encodedToken); // Base64 decode
-    let result = '';
-    for (let i = 0; i < decoded.length; i++) {
-        result += String.fromCharCode(decoded.charCodeAt(i) ^ key.charCodeAt(i % key.length));
-    }
-    return result;
-}
-
-// Access control logic
-(function () {
-    const authToken = sessionStorage.getItem('authToken');
-    const authTimestamp = sessionStorage.getItem('authTimestamp');
-    const currentTime = Date.now();
-    const tokenValidityPeriod = 5 * 60 * 1000; // 5 minutes in milliseconds
-    const key = 'aaryanSecretKey'; // Must match the key used in login page
-
-    // Check if token exists and is valid
-    if (!authToken || !authTimestamp) {
-        showAccessDenied();
-        return;
+// Secure Access Control System (v6.0)
+(function() {
+    'use strict';
+    
+    // Simple XOR-based decoding for session token
+    function decodeToken(encodedToken, key) {
+        try {
+            const decoded = atob(encodedToken); // Base64 decode
+            let result = '';
+            for (let i = 0; i < decoded.length; i++) {
+                result += String.fromCharCode(decoded.charCodeAt(i) ^ key.charCodeAt(i % key.length));
+            }
+            return result;
+        } catch (e) {
+            console.error('Token decoding failed:', e);
+            return null;
+        }
     }
 
-    // Check if token has expired
-    if (currentTime - parseInt(authTimestamp) > tokenValidityPeriod) {
+    // Main access control logic
+    function verifyAccess() {
+        const authToken = sessionStorage.getItem('authToken');
+        const authTimestamp = sessionStorage.getItem('authTimestamp');
+        const currentTime = Date.now();
+        const tokenValidityPeriod = 5 * 60 * 1000; // 5 minutes
+        
+        // Initial checks
+        if (!authToken || !authTimestamp) {
+            showAccessDenied();
+            return false;
+        }
+
+        // Check token expiration
+        if (currentTime - parseInt(authTimestamp) > tokenValidityPeriod) {
+            sessionStorage.removeItem('authToken');
+            sessionStorage.removeItem('authTimestamp');
+            showAccessDenied();
+            return false;
+        }
+
+        // Decode and validate token
+        const key = 'aaryanSecretKey'; // Must match login page
+        const decodedToken = decodeToken(authToken, key);
+        
+        if (!decodedToken) {
+            showAccessDenied();
+            return false;
+        }
+
+        const [timestamp, pin] = decodedToken.split(':');
+        if (!timestamp || !pin || !/^\d{5}$/.test(pin)) {
+            showAccessDenied();
+            return false;
+        }
+
+        // Additional validation
+        if (parseInt(timestamp) !== parseInt(authTimestamp)) {
+            showAccessDenied();
+            return false;
+        }
+
+        // Convert session token to persistent auth
+        localStorage.setItem('persistentAuth', CryptoJS.SHA256(authToken + navigator.userAgent).toString());
         sessionStorage.removeItem('authToken');
         sessionStorage.removeItem('authTimestamp');
-        showAccessDenied();
-        return;
+        
+        return true;
     }
-
-    // Decode and validate token format
-    try {
-        const decodedToken = decodeToken(authToken, key);
-        const [timestamp, pin] = decodedToken.split(':');
-        if (!timestamp || !pin || !/^\d{5}$/.test(pin) || parseInt(timestamp) !== parseInt(authTimestamp)) {
-            showAccessDenied();
-            return;
-        }
-    } catch (e) {
-        console.error('Token validation failed:', e);
-        showAccessDenied();
-        return;
-    }
-
-    // If all checks pass, allow access (do nothing, let the page load)
 
     function showAccessDenied() {
         document.body.innerHTML = `
@@ -94,8 +115,15 @@ function decodeToken(encodedToken, key) {
             <div class="access-denied">
                 <h2>Access Denied</h2>
                 <p>Please login to access this page.</p>
-                <button onclick="window.location.href='https://aaryan.com.np/'">Login</button>
+                <button onclick="window.location.href='https://login.aaryan.com.np/'">Login</button>
             </div>
         `;
     }
+
+    // Initialize on page load
+    document.addEventListener('DOMContentLoaded', function() {
+        if (verifyAccess()) {
+            document.getElementById('content').style.display = 'block';
+        }
+    });
 })();
