@@ -94,7 +94,7 @@ function decodeToken(encodedToken, key) {
             <div class="access-denied">
                 <h2>Access Denied</h2>
                 <p>Please login to access this page.</p>
-                <button onclick="window.location.href='https://login.aaryan.com.np/'">Login</button>
+                <button onclick="window.location.href='https://aaryan.com.np/'">Login</button>
             </div>
         `;
     }
