@@ -1,5 +1,5 @@
 // Deep Secure Validation Script
-    (function () {
+   /* (function () {
       try {
         const granted = localStorage.getItem('access_granted');
         const hash = localStorage.getItem('access_hash');
@@ -26,3 +26,4 @@
         window.location.replace("https://login.aaryan.com.np");
       }
     })();
+*/
